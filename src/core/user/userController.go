@@ -1,4 +1,4 @@
-package routes
+package user
 
 import (
 	usecases "api/src/core/user/modules"
@@ -6,7 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func UserController (app *fiber.App){
+func UserController(app *fiber.App) {
 	app.Post("/user", usecases.CreateUserHandler)
 	app.Delete("/user/:id", usecases.DeleteUserHandler)
 	app.Put("/user/:id", usecases.UpdateUserHandler)

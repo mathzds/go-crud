@@ -1,12 +1,13 @@
 package routes
 
 import (
-	routes "api/src/core/user"
-
+	user "api/src/core/user"
+	anime "api/src/core/anime"	
 	"github.com/gofiber/fiber/v2"
 )
 
 func InitRoutes(app *fiber.App) error {
-	routes.UserController(app)
+	user.UserController(app)
+	anime.AnimeController(app)
 	return nil
 }
