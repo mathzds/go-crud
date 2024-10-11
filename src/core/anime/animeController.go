@@ -9,4 +9,5 @@ import (
 func AnimeController(app *fiber.App) {
 	app.Get("/anime/search/", usecases.AnimeSearchHandler)
 	app.Get("/anime/releases", usecases.AnimeReleasesHandler)
+	app.Get("/animes/info/:id/:page/:order", usecases.AnimeInfoHandler)
 }
