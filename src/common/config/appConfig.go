@@ -29,9 +29,9 @@ func NewConfig() *Config {
 			ImagesEpisode:   "https://static.anroll.net/images/animes/screens/${slug}/${number}.jpg",
 			Search:          "https://api-search.anroll.net/data?q=${query}",
 			Releases:        "https://www.anroll.net/",
-			Anime:          "https://www.anroll.net${generic}",
+			Anime:           "https://www.anroll.net/${generic}",
 			AnimeEpisode:    "https://apiv3-prd.anroll.net/animes/${id}/episodes?page=${page}&order=${order}",
-			m3u8:           "https://cdn-zenitsu-2-gamabunta.b-cdn.net/cf/hls",
+			m3u8:            "https://cdn-zenitsu-2-gamabunta.b-cdn.net/cf/hls",
 		},
 	}
 }

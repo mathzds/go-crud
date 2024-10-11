@@ -7,13 +7,6 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 )
-
-func AnimeInfo() string {
-	cfg := config.NewConfig()
-	anime := cfg.Anime
-	return anime.AnimeEpisode
-}
-
 func replaceParams(template string, params map[string]string) string {
 	result := template
 	for key, value := range params {
@@ -22,8 +15,14 @@ func replaceParams(template string, params map[string]string) string {
 	return result
 }
 
-func AnimeInfoHandler(c *fiber.Ctx) (err error) {
-	baseUrl := AnimeInfo()
+func AnimeInfoEpisodes() string {
+	cfg := config.NewConfig()
+	anime := cfg.Anime
+	return anime.AnimeEpisode
+}
+
+func AnimeInfoHandlerEpisodes(c *fiber.Ctx) (err error) {
+	baseUrl := AnimeInfoEpisodes()
 
 	id := c.Params("id")
 	page := c.Params("page")
