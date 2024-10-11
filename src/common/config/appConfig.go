@@ -18,24 +18,23 @@ type AnimeConfig struct {
 	Releases        string
 	Anime           string
 	AnimeEpisode    string
-	m3u8            string
+	Hls            string
 }
 
 func NewConfig() *Config {
 	return &Config{
 		Port: "3000",
 		Anime: AnimeConfig{
+			Hls:            "https://cdn-zenitsu-2-gamabunta.b-cdn.net/cf/hls",
 			ImagesThumbnail: "https://static.anroll.net/images/${type}/capas/${slug}.jpg",
 			ImagesEpisode:   "https://static.anroll.net/images/animes/screens/${slug}/${number}.jpg",
 			Search:          "https://api-search.anroll.net/data?q=${query}",
 			Releases:        "https://www.anroll.net/",
 			Anime:           "https://www.anroll.net/${generic}",
 			AnimeEpisode:    "https://apiv3-prd.anroll.net/animes/${id}/episodes?page=${page}&order=${order}",
-			m3u8:            "https://cdn-zenitsu-2-gamabunta.b-cdn.net/cf/hls",
 		},
 	}
 }
-
 func (a AnimeConfig) ImagesThumbnailURL(typeParam, slug string) string {
 	return replaceParams(a.ImagesThumbnail, map[string]string{"type": typeParam, "slug": slug})
 }
